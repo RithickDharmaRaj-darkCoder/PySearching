@@ -1,31 +1,27 @@
 # Calling of list...
 
 def linear():
-    lst = []
-    lsize = int(input("\nEnter how many elements to be insert : "))
-    for i in range(lsize):
-        elst = input("Enter the elements to add it in list : ")
-        lst.append(elst)
-    print(lst)
-    fnum = input("\nEnter the element to find : ")
+    print('---------- LINEAR SEARCH ----------')
+    lsize = int(input('How many numbers want to insert : '))
+    lst = [int(input(f'Add Number {i + 1} : ')) for i in range(lsize)]
+    print(f'Your List : {lst}')
+    fnum = int(input("Enter the element to find : "))
 
     for i in range(len(lst)):
         if lst[i] == fnum:
-            print(f"Element fount at position {i+1}.")
-            break
+            print(f"Element fount at position {i + 1}.")
+            continue
     else:
-        print("Element not in the list!")
+        if fnum not in lst:
+            print("Element not in the list!")
 
 def binary():
-    lst = []
-    lsize = int(input("\nEnter how many numbers to be insert : "))
-    for i in range(lsize):
-        elst = int(input("Enter the numbers to add it in list : "))
-        lst.append(elst)
-    lst.sort()
-    print(lst)
+    print('---------- BINARY SEARCH ----------')
+    lsize = int(input('How many numbers want to insert : '))
+    lst = [int(input(f'Add Number {i + 1} : ')) for i in range(lsize)]
+    print(f'Your List : {lst}')
     fnum = int(input("\nEnter the numbers to find : "))
-
+    lst.sort()
     l = 0
     u = len(lst) - 1
     while l <= u:
